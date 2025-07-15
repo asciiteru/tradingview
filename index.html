@@ -1,19 +1,21 @@
-.tradingview-widget-container {
-  height: 100%;
-  width: 100%;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TradingView Chart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright">
+      <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+        <span class="blue-text">Track all markets on TradingView</span>
+      </a>
+    </div>
+  </div>
 
-.tradingview-widget-container__widget {
-  height: calc(100% - 32px);
-  width: 100%;
-}
-
-.tradingview-widget-copyright {
-  font-size: 13px;
-  text-align: right;
-  margin-top: 4px;
-}
-
-.blue-text {
-  color: #1e53e5;
-}
+  <script src="widget-config.js"></script>
+</body>
+</html>
