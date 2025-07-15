@@ -1,1 +1,44 @@
-(function(){var script=document.createElement('script');script.type='text/javascript';script.src='https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';script.async=!0;script.innerHTML=JSON.stringify({allow_symbol_change:!0,calendar:!1,details:!0,hide_side_toolbar:!0,hide_top_toolbar:!1,hide_legend:!1,hide_volume:!0,hotlist:!1,interval:"W",locale:"en",save_image:!0,style:"2",symbol:"NASDAQ:NVDA",theme:"light",timezone:"Europe/Rome",backgroundColor:"#ffffff",gridColor:"rgba(46, 46, 46, 0)",watchlist:[],withdateranges:!1,compareSymbols:[{symbol:"NYSE:ORCL",position:"SameScale"},{symbol:"NASDAQ:ADBE",position:"SameScale"},{symbol:"XETR:BMW",position:"SameScale"},{symbol:"NYSE:KO",position:"SameScale"},{symbol:"NYSE:MCD",position:"SameScale"}],studies:[],autosize:!0});document.querySelector('.tradingview-widget-container__widget').appendChild(script)})()
+(function() {
+  const widgetContainer = document.querySelector('.tradingview-widget-container__widget');
+  if (!widgetContainer) return;
+
+  const script = document.createElement('script');
+  script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+  script.async = true;
+
+  // Proper configuration setup
+  const config = {
+    allow_symbol_change: true,
+    calendar: false,
+    details: true,
+    hide_side_toolbar: true,
+    hide_top_toolbar: false,
+    hide_legend: false,
+    hide_volume: true,
+    hotlist: false,
+    interval: "W",
+    locale: "en",
+    save_image: true,
+    style: "2",
+    symbol: "NASDAQ:NVDA",
+    theme: "light",
+    timezone: "Europe/Rome",
+    backgroundColor: "#ffffff",
+    gridColor: "rgba(46, 46, 46, 0)",
+    watchlist: [],
+    withdateranges: false,
+    compareSymbols: [
+      { symbol: "NYSE:ORCL", position: "SameScale" },
+      { symbol: "NASDAQ:ADBE", position: "SameScale" },
+      { symbol: "XETR:BMW", position: "SameScale" },
+      { symbol: "NYSE:KO", position: "SameScale" },
+      { symbol: "NYSE:MCD", position: "SameScale" }
+    ],
+    studies: [],
+    autosize: true
+  };
+
+  // Append script with proper configuration
+  script.appendChild(document.createTextNode(JSON.stringify(config)));
+  widgetContainer.appendChild(script);
+})();
