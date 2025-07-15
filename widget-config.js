@@ -1,6 +1,5 @@
-// Dynamically inject the TradingView script with config
 (function() {
-  var script = document.createElement('script');
+  const script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
   script.async = true;
@@ -34,5 +33,6 @@
     studies: [],
     autosize: true
   });
+
   document.querySelector('.tradingview-widget-container__widget').appendChild(script);
 })();
